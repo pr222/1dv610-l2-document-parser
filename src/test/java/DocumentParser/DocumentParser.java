@@ -34,13 +34,45 @@ public class DocumentParser {
 
         ArrayList<Token> tokens = new ArrayList<>();
 
-        while(tokenizer.getActiveToken().getType() != "END") {
+        while(!tokenizer.getActiveToken().getType().equals("END")) {
+            if (tokenizer.getActiveToken().getType().equals("WORD")) {
+                tokens.add(tokenizer.getActiveToken());
+            } else {
+                if (tokens.size() > 0) {
+                    if (tokenizer.getActiveToken().getType().equals("DOT")) {
+                        Sentence sen = new Regular(tokenizer.getActiveToken());
+                        for (Token tok : tokens) {
+                            sen.addWord(new Word(tok));
+                        }
+                        document.addToSentences(sen);
+                    } else if (tokenizer.getActiveToken().getType().equals("QUESTION")) {
+                        Sentence sen = new Question(tokenizer.getActiveToken());
+                        for (Token tok : tokens) {
+                            sen.addWord(new Word(tok));
+                        }
+                        document.addToSentences(sen);
+                    } else if (tokenizer.getActiveToken().getType().equals("EXCLAMATION")) {
+                        Sentence sen = new Exclamation(tokenizer.getActiveToken());
+                        for (Token tok : tokens) {
+                            sen.addWord(new Word(tok));
+                        }
+                        document.addToSentences(sen);
+                    }
+                    tokens = new ArrayList<>();
+                } else {
+                    throw new Exception("Invalid sentence, a sentence must have at least one word");
+                }
+            }
 
             tokenizer.next();
         }
-        Token token = new Token();
-        // TODO: loop tokenizer until END
+
+
         // TODO: loops to build sentences, check for sentence types
+    }
+
+    private void documentize(Token token) {
+
     }
 
     public Document getParsedDocument() {

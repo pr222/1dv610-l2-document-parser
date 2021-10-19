@@ -9,7 +9,7 @@ public class Sentences {
         this.sentences = new ArrayList<>();
     }
 
-    public void insertSentence(Sentence sentence) {
+    public void addSentence(Sentence sentence) {
         this.sentences.add(sentence);
     }
 

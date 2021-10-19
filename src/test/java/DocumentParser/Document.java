@@ -13,9 +13,26 @@ public class Document {
         this.endMarker = new Token("END", "");
     }
 
+    public void addToSentences(Sentence sentence) {
+        sentences.addSentence(sentence);
+    }
+
     public ArrayList<Sentence> getAllSentences() {
         return sentences.getListOfSentences();
     }
 
+    public ArrayList<Sentence> getAllRegular() {
+        // TODO: Return all Regular
+        return new ArrayList<>();
+    }
 
+    public ArrayList<Sentence> getAllQuestions() {
+        // TODO: Return all Question
+        return new ArrayList<>();
+    }
+
+    public ArrayList<Sentence> getAllExclamations() {
+        // TODO: Return all Exclamation
+        return new ArrayList<>();
+    }
 }
