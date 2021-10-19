@@ -2,6 +2,8 @@ package DocumentParser;
 
 import Tokenizer.Token;
 
+import java.util.ArrayList;
+
 public class Document {
     private Sentences sentences;
     private Token endMarker;
@@ -11,8 +13,8 @@ public class Document {
         this.endMarker = new Token("END", "");
     }
 
-    public Sentences getSentences() {
-        return sentences;
+    public ArrayList<Sentence> getAllSentences() {
+        return sentences.getListOfSentences();
     }
 
 

@@ -3,6 +3,10 @@ package DocumentParser;
 import Tokenizer.TokenGrammar;
 import Tokenizer.TokenMatchRule;
 import Tokenizer.Tokenizer;
+import Tokenizer.Token;
+
+import java.util.ArrayList;
+
 
 public class DocumentParser {
     private Document document;
@@ -28,6 +32,13 @@ public class DocumentParser {
     public void parse(String newInput) throws Exception {
         Tokenizer tokenizer = new Tokenizer(grammar, newInput);
 
+        ArrayList<Token> tokens = new ArrayList<>();
+
+        while(tokenizer.getActiveToken().getType() != "END") {
+
+            tokenizer.next();
+        }
+        Token token = new Token();
         // TODO: loop tokenizer until END
         // TODO: loops to build sentences, check for sentence types
     }
