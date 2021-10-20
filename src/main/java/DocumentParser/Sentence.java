@@ -8,7 +8,7 @@ public abstract class Sentence {
     Token endMarker;
 
     public Sentence(Token endMarker) {
-        this.words = new ArrayList<Word>();
+        this.words = new ArrayList<>();
         this.endMarker = endMarker;
     }
 
@@ -28,10 +28,10 @@ public abstract class Sentence {
         StringBuilder sentence = new StringBuilder();
 
         for (Word word : words) {
-            sentence.append(word).append(" ");
+            sentence.append(word.getWord()).append(" ");
         }
 
-        sentence.replace(sentence.length(), sentence.length(), endMarker.getValue());
+        sentence.replace(sentence.length()-1, sentence.length(), endMarker.getValue());
 
         return sentence.toString();
     }

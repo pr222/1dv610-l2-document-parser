@@ -22,17 +22,38 @@ public class Document {
     }
 
     public ArrayList<Sentence> getAllRegular() {
-        // TODO: Return all Regular
-        return new ArrayList<>();
+        ArrayList<Sentence> regular = new ArrayList<>();
+
+        for (Sentence sentence : sentences.getListOfSentences()) {
+            if (sentence instanceof Regular) {
+                regular.add(sentence);
+            }
+        }
+
+        return regular;
     }
 
     public ArrayList<Sentence> getAllQuestions() {
-        // TODO: Return all Question
-        return new ArrayList<>();
+        ArrayList<Sentence> question = new ArrayList<>();
+
+        for (Sentence sentence : sentences.getListOfSentences()) {
+            if (sentence instanceof Question) {
+                question.add(sentence);
+            }
+        }
+
+        return question;
     }
 
     public ArrayList<Sentence> getAllExclamations() {
-        // TODO: Return all Exclamation
-        return new ArrayList<>();
+        ArrayList<Sentence> exclamation = new ArrayList<>();
+
+        for (Sentence sentence : sentences.getListOfSentences()) {
+            if (sentence instanceof Exclamation) {
+                exclamation.add(sentence);
+            }
+        }
+
+        return exclamation;
     }
 }
