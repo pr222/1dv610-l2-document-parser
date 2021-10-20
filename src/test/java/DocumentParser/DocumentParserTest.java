@@ -1,8 +1,6 @@
 package DocumentParser;
 
-import Tokenizer.Token;
 import org.junit.jupiter.api.*;
-
 import java.util.ArrayList;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -17,7 +15,7 @@ public class DocumentParserTest {
     public void setupParser() throws Exception {
         DocumentParser parser = new DocumentParser();
 
-        parser.parse("");
+        parser.parse(" ");
         empty = parser.getParsedDocument();
         parser.resetDocument();
 
@@ -87,12 +85,12 @@ public class DocumentParserTest {
         Assertions.assertEquals("This is regular.", sentence);
     }
 
-    @Test void GIVEN_with1Regular1Question1Exclamation_theSecondSentence_SHOULD_returnRightFormattedStirng() {
+    @Test void GIVEN_with1Regular1Question1Exclamation_theSecondSentence_SHOULD_returnRightFormattedString() {
         String sentence = with1Regular1Question1Exclamation.getAllSentences().get(1).getSentence();
         Assertions.assertEquals("Another one?", sentence);
     }
 
-    @Test void GIVEN_with1Regular1Question1Exclamation_theThirdSentence_SHOULD_returnRightFormattedStirng() {
+    @Test void GIVEN_with1Regular1Question1Exclamation_theThirdSentence_SHOULD_returnRightFormattedString() {
         String sentence = with1Regular1Question1Exclamation.getAllSentences().get(2).getSentence();
         Assertions.assertEquals("Stopping with this!", sentence);
     }
@@ -110,5 +108,15 @@ public class DocumentParserTest {
     @Test void GIVEN_with1Regular1Question1Exclamation_theWordsInThirdSentence_SHOULD_haveSize3() {
         ArrayList<Word> words = with1Regular1Question1Exclamation.getAllSentences().get(2).getWords();
         Assertions.assertEquals(3, words.size());
+    }
+
+    @Test void parsingInputStartingWithANonWord_SHOULD_THROW_EXCEPTION() {
+        DocumentParser parser = new DocumentParser();
+        Assertions.assertThrows(Exception.class, () -> parser.parse(". a"));
+    }
+
+    @Test void parsingInputWithoutWordsBetweenSentenceMarkers_SHOULD_THROW_EXCEPTION() {
+        DocumentParser parser = new DocumentParser();
+        Assertions.assertThrows(Exception.class, () -> parser.parse("a sentence? a true. ! not"));
     }
 }
