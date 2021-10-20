@@ -1,6 +1,9 @@
 package DocumentParser;
 
+import Tokenizer.Token;
 import org.junit.jupiter.api.*;
+
+import java.util.ArrayList;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class DocumentParserTest {
@@ -22,7 +25,7 @@ public class DocumentParserTest {
         with3RegularSentences = parser.getParsedDocument();
         parser.resetDocument();
 
-        parser.parse("This is regular. Another one? Stopping with this!");
+        parser.parse("This is very regular. Another one? Stopping with this!");
         with1Regular1Question1Exclamation = parser.getParsedDocument();
         parser.resetDocument();
 
@@ -82,5 +85,30 @@ public class DocumentParserTest {
     @Test void GIVEN_with3RegularSentences_theFirstSentence_SHOULD_returnRightFormattedString() {
         String sentence = with3RegularSentences.getAllSentences().get(0).getSentence();
         Assertions.assertEquals("This is regular.", sentence);
+    }
+
+    @Test void GIVEN_with1Regular1Question1Exclamation_theSecondSentence_SHOULD_returnRightFormattedStirng() {
+        String sentence = with1Regular1Question1Exclamation.getAllSentences().get(1).getSentence();
+        Assertions.assertEquals("Another one?", sentence);
+    }
+
+    @Test void GIVEN_with1Regular1Question1Exclamation_theThirdSentence_SHOULD_returnRightFormattedStirng() {
+        String sentence = with1Regular1Question1Exclamation.getAllSentences().get(2).getSentence();
+        Assertions.assertEquals("Stopping with this!", sentence);
+    }
+
+    @Test void GIVEN_with1Regular1Question1Exclamation_theWordsInFirstSentence_SHOULD_haveSize4() {
+        ArrayList<Word> words = with1Regular1Question1Exclamation.getAllSentences().get(0).getWords();
+        Assertions.assertEquals(4, words.size());
+    }
+
+    @Test void GIVEN_with1Regular1Question1Exclamation_theWordsInSecondSentence_SHOULD_haveSize2() {
+        ArrayList<Word> words = with1Regular1Question1Exclamation.getAllSentences().get(1).getWords();
+        Assertions.assertEquals(2, words.size());
+    }
+
+    @Test void GIVEN_with1Regular1Question1Exclamation_theWordsInThirdSentence_SHOULD_haveSize3() {
+        ArrayList<Word> words = with1Regular1Question1Exclamation.getAllSentences().get(2).getWords();
+        Assertions.assertEquals(3, words.size());
     }
 }
