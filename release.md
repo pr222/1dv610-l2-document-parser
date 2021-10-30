@@ -2,7 +2,7 @@
 
 ## Checklista
   - [x] Jag har skrivit all kod och reflektioner själv. Jag har inte använt mig av andras kod för att lösa uppgiften.
-  - [x] Mina testresultat är skrivna utifrån utförd testning ( och inte teoretiskt, "det bör fungera" :) )
+  - [x] Mina testresultat är skrivna utifrån utförd testning (och inte teoretiskt, "det bör fungera" :))
   - [x] De enda statiska metoder eller funktioner utanför klasser som jag har är för att starta upp min testapplikation ex main(java).
   - [x] De enda bibliotek och färdiga klasser som används är sådana som måste användas (eller som används för att testa modulen).
 
@@ -30,23 +30,24 @@ Förtydligande: Examinator kommer sätta betyg oberoende på vad ni anser. Att h
 ## Komponenter och återanvändning
 - Länka in URL om du använder olika repositorier för dina olika komponenter.
 ### Tokenizer
-Repo:
-README:
+- [Tokenizer-repo](https://gitlab.lnu.se/1dv610/student/pr222ja/l1)
+- [README](https://gitlab.lnu.se/1dv610/student/pr222ja/l1/-/blob/master/README.md)
 
 ### Parser
-Repo:
+- [Parser-repo](https://gitlab.lnu.se/1dv610/student/pr222ja/l2)
 README:
 
 ### Printer
-Repo:
-README:
-Repot ska vara öppet och tillgängligt för inloggade användare.
+- [Printer-repo](https://gitlab.lnu.se/pr222ja/color-printer) (Repot ska vara öppet och tillgängligt för inloggade användare.)
+- [README](https://gitlab.lnu.se/pr222ja/color-printer/-/blob/main/README.md)
 
- - Beskriv komponenterna och hur de skall användas.
- - Beskriv hur du anpassat din kod och instruktioner för att någon annan programmerare skall kunna använda dina komponenter. Om du skrivit instruktioner för din användare länka till dessa. Om inte beskriv här hur någon skall göra. 
+
+
+- Beskriv komponenterna och hur de skall användas.
+- Beskriv hur du anpassat din kod och instruktioner för att någon annan programmerare skall kunna använda dina komponenter. Om du skrivit instruktioner för din användare länka till dessa. Om inte beskriv här hur någon skall göra. 
   <!-- Ev extra om hur jar-dependencys behöver läggas till med libs-mapp och jar-fil -->
   <!-- Hämta ner dependencyn, köra gradle task för att publicera i lokala maven-publications, leta rätt på jar-filen i .m2-mappen på datorn, skapa en libs-mapp i projektets repo och lägga dit jar-filen. Sedan lägga till flatdir i gradle.settings samt dependency till implementation med jar-specen. -->
- - Beskriv hur du säkerhetställt att beroendena mellan komponenterna är som beskrivs i laborationen. 
+- Beskriv hur du säkerhetställt att beroendena mellan komponenterna är som beskrivs i laborationen. 
 
 ## Beskrivning av min kod
 - Beskriv din kod på en hög abstraktionsnivå. En kort beskrivning av dina viktigaste klasser och metoder i dina komponenter. 
