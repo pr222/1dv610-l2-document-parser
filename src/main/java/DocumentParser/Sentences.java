@@ -3,7 +3,7 @@ package DocumentParser;
 import java.util.ArrayList;
 
 public class Sentences {
-    private ArrayList<Sentence> sentences;
+    private final ArrayList<Sentence> sentences;
 
     public Sentences() {
         this.sentences = new ArrayList<>();

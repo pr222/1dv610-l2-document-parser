@@ -28,14 +28,13 @@
 Förtydligande: Examinator kommer sätta betyg oberoende på vad ni anser. Att ha "saker" från högre betygsnivåer verkar positivt och kan väga upp brister i inlämningen.
 
 ## Komponenter och återanvändning
-- Länka in URL om du använder olika repositorier för dina olika komponenter.
 ### Tokenizer
 - [Tokenizer-repo](https://gitlab.lnu.se/1dv610/student/pr222ja/l1)
 - [README](https://gitlab.lnu.se/1dv610/student/pr222ja/l1/-/blob/master/README.md)
 
 ### Parser
 - [Parser-repo](https://gitlab.lnu.se/1dv610/student/pr222ja/l2)
-README:
+- [README](https://gitlab.lnu.se/1dv610/student/pr222ja/l2/-/blob/master/README.md)
 
 ### Printer
 - [Printer-repo](https://gitlab.lnu.se/pr222ja/color-printer) (Repot ska vara öppet och tillgängligt för inloggade användare.)
