@@ -1,8 +1,7 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
-
-
 
 repositories {
     mavenCentral()
@@ -19,4 +18,23 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        myParser(MavenPublication) {
+            groupId 'org.example'
+            artifactId 'l2'
+            version '1.0'
+            from components.java
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+        }
+    }
 }

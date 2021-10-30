@@ -1,16 +1,12 @@
 package DocumentParser;
 
-import Tokenizer.Token;
-
 import java.util.ArrayList;
 
 public class Document {
-    private Sentences sentences;
-    private Token endMarker;
+    private final Sentences sentences;
 
     public Document() {
         this.sentences = new Sentences();
-        this.endMarker = new Token("END", "");
     }
 
     public void addToSentences(Sentence sentence) {

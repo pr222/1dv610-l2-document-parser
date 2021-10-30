@@ -3,7 +3,7 @@ package DocumentParser;
 import Tokenizer.Token;
 
 public class Word {
-    Token word;
+    private final Token word;
 
     Word(Token word) {
         this.word = word;

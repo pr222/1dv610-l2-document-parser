@@ -6,6 +6,7 @@ import java.util.ArrayList;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class DocumentParserTest {
     Document empty;
+    Document sentenceWithoutEndingMarker;
     Document with3RegularSentences;
     Document with1Regular1Question1Exclamation;
     Document with2Questions1Exclamation;
@@ -17,6 +18,10 @@ public class DocumentParserTest {
 
         parser.parse(" ");
         empty = parser.getParsedDocument();
+        parser.resetDocument();
+
+        parser.parse("A sentence");
+        sentenceWithoutEndingMarker = parser.getParsedDocument();
         parser.resetDocument();
 
         parser.parse("This  is  regular . Another one. Stopping with this.");
@@ -38,6 +43,10 @@ public class DocumentParserTest {
 
     @Test void GIVEN_empty_askingForAllSentences_SHOULD_haveSize0() {
         Assertions.assertEquals(0, empty.getAllSentences().size());
+    }
+
+    @Test void GIVEN_sentenceWithoutEndingMarker_askingForAllSentences_SHOULD_haveSize0() {
+        Assertions.assertEquals(0, sentenceWithoutEndingMarker.getAllSentences().size());
     }
 
     @Test void GIVEN_with3RegularSentences_askingForAllSentences_SHOULD_haveSize3() {

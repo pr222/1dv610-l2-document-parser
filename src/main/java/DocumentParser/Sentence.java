@@ -4,8 +4,8 @@ import Tokenizer.Token;
 import java.util.ArrayList;
 
 public abstract class Sentence {
-    ArrayList<Word> words;
-    Token endMarker;
+    private final ArrayList<Word> words;
+    private final Token endMarker;
 
     public Sentence(Token endMarker) {
         this.words = new ArrayList<>();
