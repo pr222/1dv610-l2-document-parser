@@ -28,36 +28,35 @@
 Förtydligande: Examinator kommer sätta betyg oberoende på vad ni anser. Att ha "saker" från högre betygsnivåer verkar positivt och kan väga upp brister i inlämningen.
 
 ## Komponenter och återanvändning
-### Tokenizer
-- [Tokenizer-repo](https://gitlab.lnu.se/1dv610/student/pr222ja/l1)
-- [README](https://gitlab.lnu.se/1dv610/student/pr222ja/l1/-/blob/master/README.md)
+| Komponent |  Repo  | Återanvänding |
+| --------- | ------ | ------------- | 
+| Tokenizer | [Tokenizer-repo](https://gitlab.lnu.se/1dv610/student/pr222ja/l1) | [README](https://gitlab.lnu.se/1dv610/student/pr222ja/l1/-/blob/master/README.md) |
+| Parser | [Parser-repo](https://gitlab.lnu.se/1dv610/student/pr222ja/l2) | [README](https://gitlab.lnu.se/1dv610/student/pr222ja/l2/-/blob/master/README.md) |
+| Printer | [Printer-repo](https://gitlab.lnu.se/pr222ja/color-printer)* | [README](https://gitlab.lnu.se/pr222ja/color-printer/-/blob/main/README.md) |
+`*` Printer-repot ska vara öppet och tillgängligt för inloggade användare.
 
-### Parser
-- [Parser-repo](https://gitlab.lnu.se/1dv610/student/pr222ja/l2)
-- [README](https://gitlab.lnu.se/1dv610/student/pr222ja/l2/-/blob/master/README.md)
+Parsern är beroende på Tokenizern och för att få parsern att fungera så behöver Tokenizern läggas till som en jar-fil. Parsern tar in strängar för att tolka strängen och bygger ett dokument-objekt av olika typer utav meningar. Den använder sig utav Tokenizern för att få fram enskilda orden och meningsavslutande tecken. Printern i sin tur är beroende utav båda, eftersom den främst vill använda sig utav parsern men behöver då även Tokenizern för att parsern ska fungera. Så printern behöver se till att få mer jar-filer för både parsern och tokeniseraren.
 
-### Printer
-- [Printer-repo](https://gitlab.lnu.se/pr222ja/color-printer) (Repot ska vara öppet och tillgängligt för inloggade användare.)
-- [README](https://gitlab.lnu.se/pr222ja/color-printer/-/blob/main/README.md)
-
-
-
-- Beskriv komponenterna och hur de skall användas.
-- Beskriv hur du anpassat din kod och instruktioner för att någon annan programmerare skall kunna använda dina komponenter. Om du skrivit instruktioner för din användare länka till dessa. Om inte beskriv här hur någon skall göra. 
-  <!-- Ev extra om hur jar-dependencys behöver läggas till med libs-mapp och jar-fil -->
-  <!-- Hämta ner dependencyn, köra gradle task för att publicera i lokala maven-publications, leta rätt på jar-filen i .m2-mappen på datorn, skapa en libs-mapp i projektets repo och lägga dit jar-filen. Sedan lägga till flatdir i gradle.settings samt dependency till implementation med jar-specen. -->
-- Beskriv hur du säkerhetställt att beroendena mellan komponenterna är som beskrivs i laborationen. 
+Beskrivningar för återanvändning utav de enskilda modulerna och importering utav beroendena finns beskrivna i respektive README-fil. 
 
 ## Beskrivning av min kod
-- Beskriv din kod på en hög abstraktionsnivå. En kort beskrivning av dina viktigaste klasser och metoder i dina komponenter. 
-- Skapa gärna ett klassdiagram som bild. 
-- Beskriv relationerna mellan klasserna mellan komponenter.
+DocumentParser är parsningsklassen och som håller i Document-klassobjektet som har samlingen utav färdig-parsade meningar. Parsern bygger upp reglerna för hur tokens, delar utav meningarna, ska se ut genom att använda sig utav Tokenizer-paketet. 
+
+ColorPrinter-klassen är den som ber parsern att parsa strängar genom att anropa parserns metod parse(String input) och kan be om parserns document genom getParsedDocument()-metoden för att lägga till documentet till printerns Styler-klass som kan göra slutliga formateringen på meningarna beroende på meningarnas konkreta typ-klasser. 
+
+Diagrammet nedan visar de metoder och klasser som är viktigast för kommunikationen mellan komponenterna. Vardera komponent har ett eget mer detaljerat klassdiagram i deras README-filer. 
+
+### Package diagram
+![package-diagram](./images/packages_1.png)
 
 ## Hur jag testat
-- Beskriv hur du kommit fram till om din kod fungerar. Beskriv de olika delarna och hur de testats. Screenshots från manuell testning.
-<!-- Parser: Explorativt på resetDocument-metoden. Att subklasserna instantieras rätt (dels bekräftat av automatiska testerna ändå) -->
-<!-- Printer: Manuell testning.) -->
+### Testning för parsern
+Parsern är i förstahand testad genom automatiska tester. En del explorativ testning har under processen smugit sig in, så som exempelvis för att kolla att resetDocument-metoden tömmer dokumentet på alla meningar eller att alla subklasserna för Sentece har instantierats rätt.
 
+Testerna går i första hand igenom att rätt typer och rätt antal utav typerna utav meningar finns i Document-objektet efter att en parsning har gjorts. Sedan går testerna igenom för att kolla att både meningar och ord blir rätt formaterade för när man ber om dom. Slutligen finns ett par tester för att kolla att undantag kastas när en mening inte börjas med minst ett ord.
+
+### Testning för printern
+Printer-modulen har enbart testats manuellt med främst fokus på förväntad lyckad användning. Mot slutet har viss testning även lagts till för vad som väntas ske vid fel på parsningen. Dom testerna är mest för att visa på hur beteendes fungerar i nuläget istället för vad som potentiellt vore det mest användarvänliga sättet.
 
 ### Testfall
 Parser: [Screen-shot-resultat](https://gitlab.lnu.se/1dv610/student/pr222ja/l2/-/blob/master/release.md#screen-shot), [Tabell-resultat](https://gitlab.lnu.se/1dv610/student/pr222ja/l2/-/blob/master/release.md#tabell)
@@ -98,9 +97,9 @@ Specifika indata och utdata, samt stegen för testfallen är noggrannare specifi
 
 | Test      | Indata | Förväntat Utfall | PASS/FAIL |
 | --------- | ------ | ---------------- | --------- |
-| TC1 - Different types of sentences prints in different colors | `First! Am I Second? Yeah Maybe.` |  **LÄNK** | PASS |
-| TC2 - Add a sentence to a document with previous sentences | `Adding another round.` |  **LÄNK** | PASS |
-| TC3 - Clearing the document from sentences | - |  **LÄNK** | PASS |
+| TC1 - Different types of sentences prints in different colors | `First! Am I Second? Yeah Maybe.` |  [TC1-expected](https://gitlab.lnu.se/pr222ja/color-printer/-/blob/main/manualTests.md#expected-result) | PASS |
+| TC2 - Add a sentence to a document with previous sentences | `Adding another round.` | [TC2-expected](https://gitlab.lnu.se/pr222ja/color-printer/-/blob/main/manualTests.md#expected-result-1) | PASS |
+| TC3 - Clearing the document from sentences | - |  [TC3-expected](https://gitlab.lnu.se/pr222ja/color-printer/-/blob/main/manualTests.md#expected-result-2) | PASS |
 | TC4 - Quitting the application | - | application stops running | PASS |
 | TC5.1 - Invalid sentence, without words | `!!` | error-message & nothing added | PASS |
 | TC5.2 - Invalid sentence, after some sentence | `So? !!` | error-message & `So?` added | PASS |
