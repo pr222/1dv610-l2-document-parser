@@ -17,7 +17,7 @@
   - [ ] Jag eftersträvar med denna inlämning högre betyg (C) och anser mig uppfylla alla extra krav för detta. 
     - [x] Jag är noga i min testning
     - [x] En del av testfallen är automatiserade (Tokenizer/Parser/PP), viss del kan vara manuellt testad.
-    - [ZZZ] Det finns en tydlig beskrivning i hur mina moduler skall användas. 
+    - [x] Det finns en tydlig beskrivning i hur mina moduler skall användas. 
     - [ZZZ] Mina reflektioner visar tydligt att jag förstått bokens koncept.
   - [ ] Jag eftersträvar med denna inlämning högsta betyg (A-B) 
     - [ ] Sammanhängande reflektion som ger ett gott helhetsintryck och visar detaljerad förståelse för kodkvalitet.
@@ -60,8 +60,9 @@ Förtydligande: Examinator kommer sätta betyg oberoende på vad ni anser. Att h
 
 
 ### Testfall
-Parser: **Screenshot-länk**, **Tabell-länk**
-Printer: **Tabell-länk**, **Specificaktion-fil**
+Parser: [Screen-shot-resultat](https://gitlab.lnu.se/1dv610/student/pr222ja/l2/-/blob/master/release.md#screen-shot), [Tabell-resultat](https://gitlab.lnu.se/1dv610/student/pr222ja/l2/-/blob/master/release.md#tabell)
+
+Printer: [Test-resultats-tabell](https://gitlab.lnu.se/1dv610/student/pr222ja/l2/-/blob/master/release.md#testning-f%C3%B6r-printer-modulen), [Test-specifikations-fil](https://gitlab.lnu.se/pr222ja/color-printer/-/blob/main/manualTests.md)
 
 #### Testning för parser-modulen
 ##### Screen shot
@@ -93,7 +94,7 @@ Printer: **Tabell-länk**, **Specificaktion-fil**
 
 #### Testning för printer-modulen
 
-Specifika indata och utdata, samt stegen för testfallen är noggrannare specificerade i manualTests.md **Länk!**
+Specifika indata och utdata, samt stegen för testfallen är noggrannare specificerade i [manualTests.md](https://gitlab.lnu.se/pr222ja/color-printer/-/blob/main/manualTests.md).
 
 | Test      | Indata | Förväntat Utfall | PASS/FAIL |
 | --------- | ------ | ---------------- | --------- |
