@@ -129,13 +129,23 @@ Specifika indata och utdata, samt stegen för testfallen är noggrannare specifi
 ### Ch 8. Boundaries
 
 ### Ch 9. Unit Tests
+![Ch9-screenshot](./images/reflections/ch9.png)
+
+Alla enhetstester i parser-modulen har en assertion per test så som boken förespråkar med "One Assert per Test". I tokenizer-modulen fanns flertal tester med 2 assertions i samma test men inför parser-modulen så hann jag ta i hänsyn rekommendationen från boken att försöka minimera antalet assertions i varje test. Däremot lyckades jag inte hålla mig till "The Three Laws of TDD" med att skriva testerna innan jag skrev produktionskoden. Vad jag å andra sidan verkligen har märkt under både parsern och tokenizern är att automatiska testerna "enable all the -ilities" och ger trygghet till att göra refektoreringar i koden, utan att behöva oroa sig för att man förstör koden. 
 
 ### Ch 10. Classes
+![Ch10-screenshot](./images/reflections/ch10.png)
+
+Utifrån feedbacken ifrån första tokenizer-uppgiften så gjorde jag ett par ändringar. Jag tog bort settern för regexet som jag hade lagt till "ifall en senare programmerare vill ta reda på vad för regex som använts" eftersom det i början var rätt otydligt hur modulen faktiskt är tänkt att användas utav någon annan och vad som är relevant att komma åt. Men det här blev ändå en påminnelse om att försöka i första hand försöka utgå ifrån stark "Encapsulation" och sedan öppna upp om det verkligen skulle visa sig nödvändigt ifrån ändrade omständigheter. Jag flyttade då sedan även matchings-förfarandet till den här klassen för stärkandet utav "Cohesion". Innan tokenizer-uppgiften hade jag inte ens hört talas om att cohesion framförallt kommer ifrån att metoderna i klassen i största mån ska använda sig utav sina klassvariabler. Det hjälpte mig senare vid skapandet utav printern, där jag märkte snabbt att "Maintaining Cohesion Results in Many Small Classes", då printern slutade upp i mycket fler klasser än vad jag hade trott innan jag började jobba på den.
 
 ### Ch 11. Systems
 
 ## Laborationsreflektion
 Reflektera över uppgiften utifrån din utveckling som programmerare. 
 <!-- Att se datastrukturer som ett eget koncept i förhållande till OO-klasser. Procedural och OO programmering, skillnader. -->
+
+
+
+
 Vad har du lärt dig och vad ser du fram emot att lära dig?
 <!-- Kanske lära sig GUI för Java, samt ramverket som möjliggör att skriva webbappar helt i Java även med frontend. Fatta buildtools för Java för att slippa ständiga stångandet -->
