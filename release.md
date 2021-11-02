@@ -12,7 +12,7 @@
     - [x] De flesta testfall fungerar (enstaka testfall kan misslyckas, tydligt vilka)
     - [x] Koden är förberedd på återanvändning
     - [x] All kod samt historik finns i git 
-    - [ZZZ] Reflektionerna är skrivna
+    - [x] Reflektionerna är skrivna
     - [x] Koden är läsbar
   - [ ] Jag eftersträvar med denna inlämning högre betyg (C) och anser mig uppfylla alla extra krav för detta. 
     - [x] Jag är noga i min testning
@@ -109,11 +109,6 @@ Specifika indata och utdata, samt stegen för testfallen är noggrannare specifi
 | Success rate: 100%  |
 
 ## Kapitelreflektioner för kapitel 2-11
-- Skriv en kort (4-6 meningar) reflektion för varje kapitel om hur just det kapitlet har påverkat eller inte påverkat din kod.
-- Använd bokens termer.
-- Ge exempel med läsbara screenshots från er kod till varje reflektion. 
-- Fokusera på tydlighet, variation, ärlighet och vad som är intressant: Icke självklara överväganden och konflikter extra intressanta.
-
 ### Ch 2. Meaningful names
 ![Ch2-screenshot](./images/reflections/ch2.png)
 
@@ -186,11 +181,11 @@ Om jag hade redan vid skapandet av parsern insett att printer-modulen skulle res
 
 
 ## Laborationsreflektion
-Reflektera över uppgiften utifrån din utveckling som programmerare. 
-<!-- Att se datastrukturer som ett eget koncept i förhållande till OO-klasser. Procedural och OO programmering, skillnader. -->
+Det har varit en lyxa att få tiden till att bearbeta sin kod, särskilt med feedback emellanåt och därigenom hitta nya kopplingar som man kanske inte hade hittat naturligt i första taget. Även om jag inte hann bearbeta DocumentParser mer än en gång så ser jag det som ett gott tecken att vid det här laget ha en start känsla om hur jag skulle kunna fortsätta jobba på denna "work in progress"-kod. 
 
+Jag hann inte riktigt komma in på hur jag eventuellt hade kunnat använda mig utav Factory Pattern för att kunna skapa de olika typerna utav meningarna. Oerfarenheten över lag utav att utnyttja de olika sub-typerna på ett "smart" sätt ledde naturligt till antagligen mer duplicering utav kod än nödvändigt. Men för den här gången nöjer jag mig med att jag lyckades få till abstrakta Sentence klassen och ha det i metodsargument, något jag försökt lite vid något tidigare tillfälle men misslyckats.
 
+Det var också trevligt att få känna kraften utav att ha automatiska testerna i ryggen. Framförallt också av att ha skrivit testerna själv, jämfört med tidigare kurser där det funnits färdiga tester som man bara ska beta av som en todo-list en gång utan refaktoreringar.
 
+Jag ser framemot att bli bättre på att använda mig utav faktiska interface:s, vilket började släppa lite i föregående kursen så som abstrakta klasser har släppt för mig i denna. Det hade också varit trevlig att få en mer grundläggande kunskap kring buildtools för Java överlag. För även om jag lärt mig en hel del genom stångande med samarbete mellan olika delar så skulle nog lite mer kunskap om de grundläggande koncepten hjälpa en hel del. Om inte annat så var det i alla fall väldigt trevligt att passa på att testa att koda i Intellij för uppgifterna i kursen och det har verkligen gett en helt annan positiv insyn till Java över lag! :)
 
-Vad har du lärt dig och vad ser du fram emot att lära dig?
-<!-- Kanske lära sig GUI för Java, samt ramverket som möjliggör att skriva webbappar helt i Java även med frontend. Fatta buildtools för Java för att slippa ständiga stångandet -->
