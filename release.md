@@ -111,73 +111,54 @@ Specifika indata och utdata, samt stegen för testfallen är noggrannare specifi
 ## Kapitelreflektioner för kapitel 2-11
 ### Ch 2. Meaningful names
 ![Ch2-screenshot](./images/reflections/ch2.png)
-
-Inte ett kodexempel, men definitivt ett exempel på pinsamt undermålig namngivning utav tokenizer- och parser-modulerna. Såpass dåliga namn burkar jag inte ha vid namngivning utav filer, borsett då för skoluppgifter där jag vill hålla en regelbundenhet och slippa extra "Mental Mapping". Däremot i perspektivet utav att någon annan skulle använda dessa så är kvaliten under all kritik, särskilt användandet utav litet "L" som gör det otroligt svårläst beroende på typsnitt huruvida det är en etta eller en bokstav. 
-
-Ovanpå det så blev namngivningen inte ens konsekvent med samma namngivningsstandard men det beror mest på min fundamentala okunnighet i hantering utav Java-projekt. Däremot är jag rätt nöjd att jag ändå lyckades få till någon form av versionshantering där, efter alla timmar som jag kämpade och var nära på att ge upp på om det hela.
+Inte ett kodexempel, men definitivt ett exempel på pinsamt undermålig namngivning utav tokenizer- och parser-modulerna. Okej i perspektivet utav att man vet vilket uppgift det handlar om men inte i perspektivet utav att någon annan skulle använda dom utanför kursen. Särskilt användandet utav litet "L" gör det otroligt svårläst beroende på typsnitt huruvida det är en etta eller bokstaven. De fick till och med helt olika format på namngivningen på grund av min okunnighet i hantering utav Java-projekt. Men jag lyckades åtminstone få till någon form av versionshantering mellan modulerna.
 
 ### Ch 3. Functions
 ![Ch3-screenshot](./images/reflections/ch3.png)
 
-Stor skämskudde för den här metoden. Den är inte liten, den har för många nästlade if- och else-satser, den gör mer än en sak, den har blandade nivåer utav asbstaktion, den har argument som kanske hade kunnat undvikas genom att ha det som klassvariabel istället, och argument-namnet är dessutom egentligen inte särskilt besrkivande för vad den har för syfte till metoden. Så metoden följer inte riktigt någon utav reglerna för hur bra funktioner ska skrivas. 
-
-Vad den däremot indirekt visar på är hur viktigt det är med refaktorering och "uppsnyggning" utav koden som en del utav skrivarprocessen. Den här versionen är endast resultatet utav en första omskrivning från det första "få det bara att fungera"-utkastet. Det är först nu efter att koden har fått "smälta" ett tag som jag ser små hintar här och där för hur jag skulle kunna börja med för att snygga till det till en bättre lösning, jämfört när den var precis nyomskriven och i press för deadlinen.
+Stor skämskudde för den här metoden. Den är inte liten, den har för många nästlade if- och else-satser, den gör mer än en sak, den har blandade nivåer utav abstraktion, den har argument som kanske hade kunnat undvikas genom att ha det som klassvariabel istället, och argument-namnet är dessutom egentligen inte särskilt beskrivande för vad den har för syfte till metoden. Så metoden följer inte riktigt någon utav reglerna för hur bra funktioner ska skrivas. Metoden hann bara få en refaktorering efter första ”få det att fungera”-utkastet, vilket tydligt märks på kvaliteten jämfört med många av de andra mer omarbetade klasserna.
 
 ### Ch 4. Comments
 ![Ch4-screenshot](./images/reflections/ch4.png)
 
-Det har varit en fröjd att för en gångs skull slippa "Mandated Comments" som förekommit i majoriteten utav kurserna hittills. Det har också underlättat förståelsen i processen utav att lära sig att använda högre abstraktionsnivå med hjälp av längre metodnamn. Det har också varit skönt att få tillåtelse utav boken på många punkter att slippa många och dåliga typer utav kommentarer. 
-
-Det har dock lett till att jag i stort sett uteslutigt i princip all form av kommentering utav koden. De tre metoderna ovan är dock exempel på metoder där jag skulle kunna tänka mig att vilja lägga till javadoc-kommentarer eftersom de är huvudmetoderna som är tänkta att användas på DocumentParser-klassen utav andra moduler. På så sätt skulle det ytterligare stärka dokumentationen och underlätta användandet utav parsern för användaren utav modulen.
+Det har varit en fröjd att för en gångs skull slippa "Mandated Comments" som förekommit i majoriteten utav kurserna hittills. Det har också varit skönt att få tillåtelse utav boken på många punkter att slippa många och dåliga typer utav kommentarer. De tre metoderna ovan är dock exempel på där jag skulle kunna tänka mig att lägga till javadoc-kommentarer för att stärka dokumentationen och underlätta användandet utav parsern för användaren utav modulen.
 
 ### Ch 5. Formatting
 ![Ch5-screenshot](./images/reflections/ch5.png)
 
-I vanliga fall skulle jag utgå ifrån att försöka ha de publika metoderna direkt nedanför konstuktorn. Men i det här fallet tyckte jag det var viktigare att följa principen utav "Conceptual Affinity" och låta den privata metoden som anropas i kontruktorn komma direkt nedanför. Trots att klassen är rätt liten så ökar det snabbheten i att komma in i vad som händer väsentligt snabbare än om style()-metoden hade blivit nedknuffad i förmån för en simpel getter-metod. 
-
-Sen är det väl kanske en annan sak att bredden på raderna i metoden börjar närma sig bekvämlighetsgränsen för vad jag skulle anse är en bra maxbredd för en kodrad. Att köra "instanceof" på meningarna är kanske inte heller den snyggaste och bästa lösningen men för tillfället är jag mest nöjd med att jag överhuvudtaget lyckats hitta syntaxen och få den checken att fungera, vilket är något jag haft problem med tidigare i Java.
+I vanliga fall skulle jag utgå ifrån att försöka ha de publika metoderna direkt nedanför konstuktorn. Men i det här fallet tyckte jag det var viktigare att följa principen utav "Conceptual Affinity" och låta den privata metoden som anropas i kontruktorn komma direkt nedanför. Trots att klassen är rätt liten så ökar det snabbheten i att komma in i vad som händer väsentligt snabbare än om style()-metoden hade blivit nedknuffad i förmån för en simpel getter-metod. Sen är det väl kanske en annan sak att bredden på raderna i metoden börjar närma sig bekvämlighetsgränsen för vad jag personligen skulle anse är en bra maxbredd för en kodrad.
 
 ### Ch 6. Objects and Data Structures
 ![Ch6-screenshot](./images/reflections/ch6.png)
 
-Innan påbörjandet utav parsern och efter att ha läst kapitlet kändes det rätt självklart och naturligt hur jag skulle lägga upp klasserna inom Document för att bygga upp en datastruktur. Vid återbesök av kapitlet såhär efteråt blev jag dock aningens förvirrad, för räknas add-metoden så som ovan till att klassen istället blev en hybrid-form mellan "Objekt" och datastruktur så som boken påstår att man ska undvika? Eller metoderna längre ner i kedjan som har metoder för att returnera sträng-representationen utav meningen eller ordet? 
+Innan påbörjandet utav parsern och efter att ha läst kapitlet kändes det rätt självklart och naturligt hur jag skulle lägga upp klasserna inom Document för att bygga upp en datastruktur. Vid återbesök av kapitlet såhär efteråt blev jag dock aningens förvirrad, för räknas add-metoden så som ovan till att klassen istället blev en hybrid-form mellan "Objekt" och datastruktur så som boken påstår att man ska undvika?
 
-Även om de skulle räknas som hybrider så skulle jag ändå luta åt att klassificera dom som mer åt data-struktur-hållet. De har åtminstone inte någon meningsfull logik eller beteende till sig så som exempelvis DocumentParser har. Problemet i så fall skulle mer ligga åt hur alla metoderna är publika, vilket kanske hade varit ett fall att på vissa ställen testa på att använda sig utav protected-accessorn som jag tidigare inte märkt något behov av att använda i tidigare uppgifter.
+Jag skulle nog ändå luta mig åt att klassificera dom som mer åt data-struktur-hållet. De har åtminstone inte någon meningsfull logik eller beteende till sig så som exempelvis DocumentParser har. Problemet i så fall skulle mer ligga åt hur alla metoderna är publika, vilket kanske hade varit ett fall att på vissa ställen testa på att använda sig utav protected-accessorn som jag tidigare inte märkt något behov av att använda i tidigare uppgifter.
 
 ### Ch 7. Error Handling
 ![Ch7-screenshot](./images/reflections/ch7.png)
 
-I början utav kursen hade jag inte någon koll på konceptet utav "Checked Exceptions", vars nackdelar jag fått uppleva genom att IDE:n inte har tillåtit mig att köra utan dem. Så alla enhetstest i tokenizern behövde ha "throws Exception" tillagt i signaturen eftersom konstruktorn för ett nytt Tokenizer-objekt anropar en metod som anropar vidare på ytterligare en metod som kastar undantag. Lyckligtvis slapp jag ha samma scenario för parsern och lägga till samma sak i signaturen för enhetstesterna där men även parsern har tre olika metoder som kastar egna undantag. 
-
-Så jag fick ändå direkt erfarenhet med nackdelen av att när man lägger till lågnivå-metoder som kastar undantag så måste även alla andra kopplade högre metoders signatur ändras, vilket boken framförallt påpekar bryter mot "Open/Closed Principle" då alla metoder i kedjan helt plötsligt måste känna till låga metodens förmåga att kasta undantag. Trösten boken ändå ger i det här fallet att det för kritiska bibliotek kan vara bra att ha kastande utav undantag på det sättet, eftersom det tvingar den som använder biblioteket att se till att hantera undantagen när de kastas.
+I början utav kursen hade jag inte någon koll på konceptet utav "Checked Exceptions", vars nackdelar jag fått uppleva genom att IDE:n inte har tillåtit mig att köra utan dem. Så alla enhetstest i tokenizern behövde ha "throws Exception" tillagt i signaturen eftersom konstruktorn för ett nytt Tokenizer-objekt anropar en metod som anropar vidare på ytterligare en metod som kastar undantag. Det boken framförallt påpekar om det är att det bryter mot "Open/Closed Principle" eftersom alla metoder i kedjan helt plötsligt måste känna till den låga metodens förmåga att kasta undantag. Trösten boken ändå ger i det här fallet att det för kritiska bibliotek kan vara bra att ha kastande utav undantag på det sättet, eftersom det tvingar den som använder biblioteket att se till att hantera undantagen när de kastas.
 
 ### Ch 8. Boundaries
 ![Ch8-screenshot](./images/reflections/ch8.png)
 
-Här är påbörjan på att försöka "gömma" tredjepartskod i en egen collection-klass. Boken förespråkar det dels för att det minskar platser där kod behöver ändras ifall vi skulle få för oss att använda något annat än ArrayList som i det här fallet, och dels för att man öppnar upp koden för onödigt många möjligheter med tredjepartskodens inkuderade metoder. 
-
-Men i slutändan trots mitt försök i samtliga moduler så returnerar jag ju ändå en ArrayList i alla fall. Dessutom är get-metoden endast menad att användas utav Document-klassen vilket skapar onödig öppenhet och potentiell förvirring utav någon som ska använda parser-modulen. Ett interface för parsern eller Document hade kanske varit i sin ordning, samt bredare kunskap hur man kan skapa itererbara egna klasser i Java.
+Här är början på att försöka "gömma" tredjepartskod i en egen klass. Boken förespråkar det dels för att det minskar platser där kod behöver ändras ifall vi skulle få för oss att använda något annat än ArrayList som i det här fallet, och dels för att man öppnar upp koden för onödigt många möjligheter med tredjepartskodens inkulderade metoder. Men i slutändan trots mitt försök i samtliga moduler så returnerar jag ju ändå en ArrayList i alla fall. Dessutom är get-metoden endast menad att användas utav Document-klassen vilket skapar onödig öppenhet och potentiell förvirring utav någon som ska använda parser-modulen. Ett interface eller kunskap om hur man kan skapa itererbara klasser i Java hade kanske kunnat komma till nytta i det här fallet.
 
 ### Ch 9. Unit Tests
 ![Ch9-screenshot](./images/reflections/ch9.png)
 
-Alla enhetstester i parser-modulen har en assertion per test så som boken förespråkar med "One Assert per Test". I tokenizer-modulen fanns flertal tester med 2 assertions i samma test men inför parser-modulen så hann jag ta i hänsyn rekommendationen från boken att försöka minimera antalet assertions i varje test. 
-
-Däremot lyckades jag inte hålla mig till "The Three Laws of TDD" med att skriva testerna innan jag skrev produktionskoden. Vad jag å andra sidan verkligen har märkt under både parsern och tokenizern är att automatiska testerna "enable all the -ilities" och ger trygghet till att göra refektoreringar i koden, utan att behöva oroa sig för att man förstör koden. 
+Alla enhetstester i parser-modulen har en assertion per test så som boken förespråkar med "One Assert per Test". I tokenizer-modulen fanns flertal tester med 2 assertions i samma test men inför parser-modulen så hann jag ta i hänsyn rekommendationen från boken att försöka minimera antalet assertions i varje test. Däremot lyckades jag under parsern inte riktigt hålla mig till "The Three Laws of TDD" med att skriva testerna innan jag skrev första produktionskoden.
 
 ### Ch 10. Classes
 ![Ch10-screenshot](./images/reflections/ch10.png)
 
-Utifrån feedbacken ifrån första tokenizer-uppgiften så gjorde jag ett par ändringar. Jag tog bort settern för regexet som jag hade lagt till "ifall en senare programmerare vill ta reda på vad för regex som använts" eftersom det i början var rätt otydligt hur modulen faktiskt är tänkt att användas utav någon annan och vad som är relevant att komma åt. Men det här blev ändå en påminnelse om att försöka i första hand försöka utgå ifrån stark "Encapsulation" och sedan öppna upp om det verkligen skulle visa sig nödvändigt ifrån ändrade omständigheter. 
-
-Jag flyttade då sedan även matchings-förfarandet till den här klassen för stärkandet utav "Cohesion". Innan tokenizer-uppgiften hade jag inte ens hört talas om att cohesion framförallt kommer ifrån att metoderna i klassen i största mån ska använda sig utav sina klassvariabler. Det hjälpte mig senare vid skapandet utav printern, där jag märkte snabbt att "Maintaining Cohesion Results in Many Small Classes", då printern slutade upp i mycket fler klasser än vad jag hade trott innan jag började jobba på den.
+Utifrån feedbacken på tokenizer-uppgiften så gjorde jag bland annat ändringen med att flytta själva matchings-förfarandet till den här klassen för stärkandet utav "Cohesion". Innan tokenizer-uppgiften hade jag inte ens hört talas om att cohesion framförallt kommer ifrån att metoderna i klassen i största mån ska använda sig utav sina klassvariabler. Det hjälpte mig senare vid skapandet utav printern, där jag märkte snabbt att "Maintaining Cohesion Results in Many Small Classes", då printern slutade upp i mycket fler klasser än vad jag hade trott innan jag började jobba på den.
 
 ### Ch 11. Systems
 ![Ch11-screenshot](./images/reflections/ch11.png)
 
-Enligt boken så bör objekt som är beroende utav ett annat objekt inte vara den som också instansierar det, för att försöka hålla sig till "Single Responsibility Principle" i system och för att lyckas med det så rekommenderas "Dependency Injection". Det hade egenltigen varit mitt föredragna sätt att göra det i det här fallet, där grammatiken skapats utanför parsern för att sedan skickas in som argument till parserns konstruktor. 
-
-Om jag hade redan vid skapandet av parsern insett att printer-modulen skulle resultera i så många klasser som den gjorde så hade jag nog garanterat bemödat mig det lilla extra med att faktiskt separera det, för att låta printern skapa just den grammatiken den behöver och inte som nu vara helt begränsad till vad parsern råkar tillåta. Nu resulterade det istället i en medvetet ful short-cut för att få klart uppgiften.
+Om jag hade redan vid skapandet av parsern insett att printer-modulen skulle resultera i så många klasser som den gjorde så hade jag nog garanterat bemödat mig det lilla extra med att köra ”Dependency Injection”. Att låta någon klass i printern skapa grammatiken för att sedan skicka in den som parameter till DocumentParser-kontruktorn. Nu blir printerns olyckligt begränsad till enbart regler som parsern tillåter. Det hade bättre följt bokens rekommendation om att inte låta objektet som är beroende av något även ha ansvaret av att instansiera det.
 
 
 ## Laborationsreflektion
